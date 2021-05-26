@@ -11,32 +11,25 @@ export class logInComponent {
 
   username:string = ""
   password:string=""
-  cond1=false
-  cond2=false
+  cond=false
   
   hide=false
 
   constructor(private router:Router){}
 
   onClick(){
-    if(this.password=='' && this.username=='')
+    if(this.password=='' || this.username=='')
     {
-      this.cond1=true
-      this.cond2=true
-    }
-
-    else if (this.username==''){
-     this.cond1=true
+      this.cond=true
 
     }
-    else if( this.password==''){
-     this.cond2=true
-    }
+
 
     else if (this.username=="1234" && this.password=="1234"){
       this.hide=true
       this.router.navigate(['dashboard'])
       alert("log in success")
+      //alert(this.hide)
 
     }
     else

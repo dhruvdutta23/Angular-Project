@@ -11,9 +11,10 @@ export class navbarComponent {
   hide:boolean=true
   constructor(private router:Router){}
 
-  onClick():void{
-  const a=new logInComponent(this.router)
-  this.hide=a.hide
-  alert(this.hide)
-  }
+ // onClick():void{
+ // const a=new logInComponent(this.router)
+  //this.hide=a.hide
+  
+ // alert(a.hide)
+ // }
 }
