@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { logInComponent } from './logIn.component';
-import { homeComponent } from '../home_component/home.component';
+import {dashBoardComponent} from './dashboard/dashboard.component'
 
 @Component({
   selector: 'app-root',
