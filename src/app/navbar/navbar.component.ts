@@ -8,7 +8,7 @@ import {logInComponent} from '../logIn.component'
   styleUrls: ['./navbar.component.scss']
 })
 export class navbarComponent {
-  hide:boolean=false
+  hide:boolean=true
   constructor(private router:Router){}
 
   onClick():void{
