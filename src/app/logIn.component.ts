@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import {Router}from '@angular/router'
+import {BackendConnectService}from './backend-connect.service'
 
 @Component({
   selector: 'login',
@@ -11,11 +12,11 @@ export class logInComponent {
 
   username:string = ""
   password:string=""
-  cond=false
-  
-  hide=false
+  cond:boolean
 
-  constructor(private router:Router){}
+
+  constructor(private router:Router, private back:BackendConnectService){
+  }
 
   onClick(){
     if(this.password=='' || this.username=='')
@@ -26,7 +27,7 @@ export class logInComponent {
 
 
     else if (this.username=="1234" && this.password=="1234"){
-      this.hide=true
+      //this.back.onLogin()
       this.router.navigate(['dashboard'])
       alert("log in success")
       //alert(this.hide)

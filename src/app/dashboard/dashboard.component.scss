@@ -1,0 +1,19 @@
+.cards{
+height:100px;
+width:150px;
+border:2px solid orange;
+margin-right: 10px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.modal{
+    border: 2px solid blue;
+    background-color: blueviolet;
+    z-index: 100;
+    position: absolute;
+    height:200px
+}

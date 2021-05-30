@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit,AfterContentInit,OnChanges} from '@angular/core';
 import {Router}from '@angular/router'
-import {logInComponent} from '../logIn.component'
+import{BackendConnectService}from '../backend-connect.service'
 
 @Component({
   selector: 'navbar',
@@ -8,13 +8,13 @@ import {logInComponent} from '../logIn.component'
   styleUrls: ['./navbar.component.scss']
 })
 export class navbarComponent {
-  hide:boolean=true
-  constructor(private router:Router){}
-
- // onClick():void{
- // const a=new logInComponent(this.router)
-  //this.hide=a.hide
-  
- // alert(a.hide)
- // }
+  hide:boolean
+  constructor(private back:BackendConnectService){
+   
+  }
+  ngOnChanges(){
+    this.hide=this.back.hide
+    console.log("navbar hide is ", this.hide)
+  }
+ 
 }

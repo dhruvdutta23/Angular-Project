@@ -1,1 +1,21 @@
-<h1>add record component</h1>
+<h1>Fill the form to add a book</h1>
+
+    <a (click)='onClick()'>Back to dashboard</a>
+    <br/>
+
+
+<form #bookForm='ngForm' (ngSubmit)='onSubmit(bookForm)'>
+    <label>
+        Book Name : <input type ='text' name='name' ngModel>
+        Title :<input type ='text' name='title' ngModel>
+        Author : <input type ='text' name='author' ngModel>
+
+    </label>
+     
+     <p *ngIf='validator'>please enter all fields</p>
+     <br/>
+
+  <button >Save</button>
+  <button (click)='onCancel(bookForm)' >Cancel</button>
+</form>
+
