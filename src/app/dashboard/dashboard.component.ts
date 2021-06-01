@@ -51,7 +51,7 @@ export class dashBoardComponent {
 
   onConfirm(){
     console.log(this.deleteBook.id)
-     this.backend.delete(this.deleteBook.id)
+     this.backend.delete(this.deleteBook.id).subscribe(res=>this.ngOnInit())
      this.delete_modal=false
   }
 
@@ -83,8 +83,11 @@ this.search=''
       "title":this.Title,
       "author":this.Author
 
+    }).subscribe(res=>{
+      //if(res.success)
+      this.ngOnInit()
+
     })
     this.update_modal=false
-    this.route.navigate(['dashboard'])
   }
 }

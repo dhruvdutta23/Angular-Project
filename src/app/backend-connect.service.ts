@@ -20,11 +20,12 @@ export class BackendConnectService {
   }
 
   delete(id){
-  this.http.delete(`delete-one-record/:${id}`)
+
+  return  this.http.delete(`http://localhost:3000/delete-one-record/${id}`)
   }
 
   post(data){
-    this.http.post("http://localhost:3000/update-existing-record",data).subscribe()
+   return this.http.post("http://localhost:3000/update-existing-record",data)
   }
 
   // delete(){
